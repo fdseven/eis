@@ -6,8 +6,8 @@ const tagList = [
     { url: "#t-promosi", name: "Promosi"},
 ]
 ---
-<div class="relative -mx-5 my-5 border-[#6d7c87]/10">
-    <div class="nav-scrollable relative p_tabs border-b [&>a.selected]:border-b-2 [&>a.selected]:border-brand flex flex-nowrap pt-1 pl-5 text-tertiary text-sm overflow-x-auto whitespace-nowrap [&>a]:transition-all [&>a]:duration-300">
+<div class="relative -mx-5 my-5 before:absolute before:content-[''] before:bg-[#6d7c87]/10 before:bottom-0 before:w-full before:h-[1px]">
+    <div class="nav-scrollable relative p_tabs flex flex-nowrap pt-1 pl-5 text-tertiary text-sm overflow-x-auto whitespace-nowrap [&>a]:transition-all [&>a]:duration-300">
         {tagList.map(item => (
             <a href={item.url} class="px-1 py-3 mr-5">{item.name}</a>
         ))}
@@ -21,6 +21,9 @@ const tagList = [
         &::-webkit-scrollbar {
 			display: none;
 		}
+        a.selected {
+            @apply border-b-2 border-brand font-semibold text-primary;
+        }
     }
 </style>
 
