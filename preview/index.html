@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale = 1.0, user-scalable = no, width=device-width, height=device-height, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="generator" content="Astro v3.2.0">
+
+<link type="image/x-icon" rel="shortcut icon" href="https://cdn.detik.net.id/detikcom/images/favicon.ico?v=2023093006152">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://online.detik.com/">
+
+<!-- Primary Meta Tags -->
+<title>EIS</title>
+<meta name="title" content="EIS">
+<meta name="description" content="Welcome to EIS!">
+
+<script type="text/javascript" src="https://online.detik.com/design/detik/_aula/js/jquery-min-3.2.1.js"></script>    
+  <link rel="stylesheet" href="/assets/style.b4d811af.css" /></head>
+  <body class="min-h-screen bg-slate-200 flex flex-col">    
+    <header id="header" class="z-[5] relative mx-auto w-full max-w-[480px] px-5 py-[17px] bg-white flex border-b border-[#6d7c87]/10">
+  <a href="/" class="h-8 [&>img]:w-auto [&>img]:h-full">
+    <img src="/assets/logo-sr.78655d9b_13TjlE.webp" alt="A description of my image." width="157" height="64" loading="lazy" decoding="async">
+  </a>  
+</header>
+    <main class="relative mx-auto w-full max-w-[480px] p-5 bg-white flex-1">
+      
+  
+    <h1 class="font-bold text-xl mb-2">Selamat Datang!</h1>  
+    Selamat Datang! Untuk masuk, pastikan nomor hp anda aktif.
+
+    <form action="tps-survei" method="post" class="grid gap-5 mt-6">
+
+      <div>
+        <label for="user" class="block text-xs leading-6">Username/Nomor HP</label>
+        <div class="mt-1 relative">
+          <input id="user" name="user" type="text" autocomplete="user" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Contoh : 081234567890">
+        </div>
+      </div>
+      <div>
+        <label for="password" class="block text-xs leading-6">Password</label>
+        <div class="mt-1 relative">
+          <input id="password" name="password" type="password" autocomplete="password" class="block w-full rounded-full border-0 pr-12 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan Password">
+          <span id="__show_password" class="icon-eye icon-eye--off w-5 h-5 absolute right-5 top-3.5"></span>
+        </div>
+      </div>
+      <label class="relative flex gap-x-3">
+        <span class="flex h-6 items-center">
+            <input id="keep" name="keep" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-brand focus:ring-0">
+        </span>
+        <span class="text-sm leading-6">Biarkan saya tetap masuk</span>
+      </label>
+      <div class="my-3 w-full">
+        <button class="border-2 inline-flex items-center justify-center font-semibold disabled:cursor-not-allowed disabled:border-transparent rounded-full hover:border-transparent focus:outline-none text-white bg-brand border-brand focus:ring-4 focus:ring-[#FFD1E2] disabled:bg-brand/30 text-base px-4 py-3 w-full" type="submit" id="form_login" disabled>
+  Masuk
+</button>
+      </div>
+      
+    </form>
+    
+    <div class="absolute bottom-6 left-5 right-5 flex flex-col items-center text-tertiary font-light">
+      Developed by : 
+      <a href="#" class="h-9 [&>img]:w-auto [&>img]:h-full">
+        <img src="/assets/logo-eis.f95d82ef_1kEgR6.webp" alt="Election Interaction System." width="181" height="72" loading="lazy" decoding="async">
+      </a>  
+    </div>
+    
+
+    </main>
+  </body></html>
+
+
+
+<script type="text/javascript">
+  $("document").ready(function(){
+      $("#__show_password").on("click", function(){
+          if($("#password").attr('type')=='password'){
+              $("#password").attr('type','text');
+              $('.icon-eye').removeClass('icon-eye--off').addClass('icon-eye--on');
+          }else{
+              $("#password").attr('type','password');
+              $('.icon-eye').removeClass('icon-eye--on').addClass('icon-eye--off');
+          }
+      })    
+  });
+
+  $('input').on("keyup mouseup", function(e) {
+      e.preventDefault();
+      if($("#user").val() && $("#password").val()){
+        $("#form_login").prop("disabled", false);
+      } else {
+        $("#form_login").prop("disabled", true);
+      }
+  });
+</script>
