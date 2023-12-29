@@ -1,0 +1,44 @@
+---
+import { cn } from "@/lib/utils";
+import Heading from "@/components/ui/Heading.astro";
+import BtnShowMore from "@/components/ui/BtnShowMore.astro";
+
+type tagOptions = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+interface Props {
+    title?: string;
+    dataSection?: string;
+    tagHeading?: tagOptions;
+    sectionHead?: boolean;
+    indeks?: boolean;
+    className?: string;
+    urlMore?: string,
+    moreColor?: "orange" | "purple";
+    classMore?: string,
+}
+const {
+    title,
+    dataSection = "",
+    sectionHead = true,
+    tagHeading = "h2",
+    indeks = true,
+    className,
+    urlMore="#", 
+    moreColor="orange",
+    classMore = "",
+} = Astro.props;
+---
+
+<section class={cn(["flex flex-col gap-7", className])} data-section={dataSection}>
+    {
+    sectionHead === true ? 
+        <div class="flex justify-between items-center">
+            {title && title.trim() !== '' && (<Heading tagType={tagHeading} size="h1" bolded={false} className="text-[#1E1E1E] font-medium">{title}</Heading>)}
+            {
+            indeks === true ? 
+            <BtnShowMore moreColor={moreColor} url={urlMore} classMore={classMore} /> : null
+            }
+        </div> : null
+    }
+    <slot/>
+</section>

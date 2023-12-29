@@ -1,0 +1,305 @@
+---
+const comic = [
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Eksekusi Rahasia", date:"19/04/2023"},
+    {title:"Demi Diriku Sendiri", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+    {title:"Ryomen Sukuna", date:"19/04/2023"},
+]
+import LinkSisip from "../components/LinkSisip.astro";
+import QuoteSisip from "../components/QuoteSisip.astro"; 
+import PicSisip from "../components/PicSisip.astro";
+import TableOfContent from "../components/TableOfContent.astro";
+import TableSisip from "../components/TableSisip.astro";
+import ArtikelSelanjutnya from "@/components/ArtikelSelanjutnya.astro";
+import Newstag from "@/components/ads/Newstag.astro";
+import Skycrapper from "../components/ads/Skycrapper.astro";
+import MultiplePage from '../components/MultiplePage.astro';
+import LongstoryPage from '../components/LongstoryPage.astro';
+import DetailFotoCarousel from '../components/DetailFotoCarousel.astro';
+import DetailComicCarousel from '../components/DetailComicCarousel.astro';
+import InfografisLainnya from "../components/InfografisLainnya.astro";
+import Divider from "../components/ui/Divider.astro";
+import Pagination from "../components/ui/Pagination.astro";
+import Button from "../components/ui/Button.astro";
+
+interface Props {
+    detailType: "default" | "foto" | "video" | "infografis" | "infografis-multiple" | "multiple" | "longstory" | "comic" | "comic-chapter";
+}
+
+const { detailType = "default" } = Astro.props;
+---
+
+{   
+    detailType === "default" || detailType === "multiple" || detailType === "longstory"  ? 
+
+    <figure class="mb-5 flex flex-col gap-2">
+        <img class="w-full" src="https://akcdn.detik.net.id/community/media/visual/2023/05/09/manga-one-piece-volume-102_43.jpeg?w=700&q=90" alt="Manga One Piece volume 102" style="width:100%" />
+        <figcaption class="text-xs">Foto: Istimewa</figcaption>
+    </figure> :
+    
+    detailType === "foto" ? 
+
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        <div class="detail__body font-helvetica text-lg">
+            <strong>Jakarta</strong> -
+            <p>
+                Kelanjutan cerita <a href="https://www.detik.com/tag/manga-one-piece">manga One Piece</a> akhirnya bakal menyapa para nakama. Dalam manga One Piece chapter 1094, <a href="https://www.detik.com/tag/eiichiro-oda">Eiichiro Oda</a> mengungkapkan buah iblis Gorosei Saturn.
+            </p>
+        </div>
+        
+        <DetailFotoCarousel thumbPos="bottom" />
+        
+    </div> : 
+
+    detailType === "video" ? 
+
+    <div class="aspect-video relative mb-5">
+        <iframe class="absolute w-full h-full" src="https://online.detik.com/design/detik/assets/embed/view-counter/vcounter-detail-v.php?counter=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        <div class="detail__body font-helvetica text-lg">
+            <p>
+                Sosok seram Valak di film 'The Nun 2' diperankan oleh Bonnie Aarons. Sutradara Michael Chaves mengungkap sosok Valak saat di balik layar.
+            </p>
+        </div>  
+        <div class="flex w-full">
+            <input type="text" class="font-helvetica flex-1 border border-black-light4 focus:border-orangepop focus:ring-0 transition-colors duration-300" value="<iframe src='https://20.detik.com/embed/230913077' frameborder='0' width='300' height='169' scrolling='no'></iframe>"> 
+            <Button as="button" variant="default" className="rounded-none ml-3">Copy</Button>
+        </div>  
+           
+    </div> :
+
+    detailType === "infografis" ? 
+
+    <figure class="mb-5 flex flex-col gap-2">
+        <img class="w-full" src="https://akcdn.detik.net.id/community/media/visual/2023/10/25/infografis-angkasa-pura-ii-bandara-kertajati-1.jpeg?w=700&q=90" alt="Penerbangan di Bandung & Kertajati Ditata, Ini Rute-Akses Transportasinya" style="width:100%" />
+        <figcaption class="text-xs">Foto: detikcom</figcaption>
+    </figure> 
+    
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        <div class="detail__body font-helvetica text-lg">
+            <strong>Jakarta</strong> - 
+            <p>
+                PT Angkasa Pura II (AP II) dan PT Bandarudara Internasional Jawa Barat (PT BIJB) akan melakukan penataan rute penerbangan Bandara Husein Sastranegara Bandung ke Bandara Kertajati, Majalengka yang dimulai hari Minggu (29/10/2023). Pihak AP II dan BIJB pun menyediakan transportasi dari/ke Kertajati.
+            </p>
+            <strong>
+            <br><br>
+            (tia/pus)</strong>
+        </div> 
+        <Divider />
+        <InfografisLainnya />
+    </div> :
+
+    detailType === "infografis-multiple" ? 
+
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        
+        <DetailFotoCarousel thumbPos="bottom" iconZoom={false} imgRatio="aspect-square" />
+
+        <div class="detail__body font-helvetica text-lg mt-5">
+            <strong>Jakarta</strong> -
+            <p>
+                PT Angkasa Pura II (AP II) dan PT Bandarudara Internasional Jawa Barat (PT BIJB) akan melakukan penataan rute penerbangan Bandara Husein Sastranegara Bandung ke Bandara Kertajati, Majalengka yang dimulai hari Minggu (29/10/2023). Pihak AP II dan BIJB pun menyediakan transportasi dari/ke Kertajati.
+            </p>
+        </div>
+        
+        <Divider />
+        <InfografisLainnya />
+        
+    </div> :
+
+    detailType === "comic" ? 
+
+    <figure class="mb-5 flex flex-col gap-2">
+        <img class="w-full" src="https://global.dafunda.com/wp-content/uploads/2023/04/Scarab-Bond.jpg?w=1200" alt="Penerbangan di Bandung & Kertajati Ditata, Ini Rute-Akses Transportasinya" style="width:100%" />
+        <figcaption class="text-xs">Foto: dok. Young Jump Comics</figcaption>
+    </figure> 
+    
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        <div class="detail__body font-helvetica text-lg">
+            <p>
+                Yuuji Itadori adalah salah seorang anggota Klub Peneliti Hal Gaib di sekolahnya yang cekatan serta memiliki fisik yang tangguh. Pada suatu hari, segel "Benda Terkutuk" yang tersimpan di sekolahnya terlepas, dan mengundang para monster yang disebut "Makhluk Kutukan" di sana! Akan tetapi, pertemuannya dengan pemuda bernama Megumi Fushiguro yang ditugaskan untuk mencari "Benda Terkutuk" itu, mengantarkannya dalam masalah yang lebih rumit lagi!
+            </p>
+        </div> 
+
+        <div class="font-helvetica">
+            <div class="font-bold text-lg border-b border-[#d9d9d9] pb-3">Daftar Chapter Jujutsu Kaisen</div>
+            {comic.slice(0,9).map((chapter, i) =>  (
+                <a href="detail-comic-chapter.html" class="flex items-center py-2 border-b border-dashed border-[#d9d9d9] group">
+                    <h5 class="text-[#0063D7] text-lg flex-1 font-bold group-hover:text-purplepop transition-colors duration-300">
+                        #00{i + 1}
+                        <span class="block font-normal text-sm">Chapter {i + 1} : {chapter.title}</span>
+                    </h5>
+                    <span class="text-sm">
+                        {chapter.date}
+                    </span>
+                </a>
+            ))} 
+            {comic.slice(9,10).map((chapter, i) =>  (
+                <a href="detail-comic-chapter.html" class="flex items-center py-2 border-b border-dashed border-[#d9d9d9] group">
+                    <h5 class="text-[#0063D7] text-lg flex-1 font-bold group-hover:text-purplepop transition-colors duration-300">
+                        #0{i + 10}
+                        <span class="block font-normal text-sm">Chapter {i + 10} : {chapter.title}</span>
+                    </h5>
+                    <span class="text-sm">
+                        {chapter.date}
+                    </span>
+                </a>
+            ))} 
+        </div>
+        <div class="my-6">
+            <Pagination 
+            textCn="text-white bg-orangepop border border-orangepop hover:bg-white hover:text-orangepop" 
+            textActiveCn="text-orangepop bg-white border border-orangepop"
+            textDotCn="text-white bg-orangepop border border-orangepop" />
+        </div>
+    </div> :
+
+    detailType === "comic-chapter" ? 
+
+    <div class="detail__left flex-grow min-w-0 mb-5">
+        <div class="detail__body font-helvetica text-lg">
+            <strong>Jakarta</strong> -
+            <p>
+                Kelanjutan cerita <a href="https://www.detik.com/tag/manga-one-piece">manga One Piece</a> akhirnya bakal menyapa para nakama. Dalam manga One Piece chapter 1094, <a href="https://www.detik.com/tag/eiichiro-oda">Eiichiro Oda</a> mengungkapkan buah iblis Gorosei Saturn.
+            </p>
+        </div>
+        
+        <DetailComicCarousel />
+        
+    </div> : 
+
+    null
+}
+
+{
+detailType !== "foto" && detailType !== "video" && detailType !== "infografis" && detailType !== "comic" && detailType !== "comic-chapter" ? 
+
+<div class="flex gap-3">
+    <div class="detail__body flex-grow min-w-0 font-helvetica text-lg">
+        <TableOfContent className="mb-5 mt-0" />
+        <strong>Jakarta</strong> -
+        <p>
+            Kelanjutan cerita <a href="https://www.detik.com/tag/manga-one-piece">manga One Piece</a> akhirnya bakal menyapa para nakama. Dalam manga One Piece chapter 1094, <a href="https://www.detik.com/tag/eiichiro-oda">Eiichiro Oda</a> mengungkapkan buah iblis Gorosei Saturn.
+        </p>
+        <p>
+            Di bab terbaru manga <a href="#">One Piece</a> 1094, pertarungan antara Admiral Kizaru dan Monkey D Luffy masih berlangsung. Tapi di tengah duel, ada Gorosei Saturn yang ikut campur.
+        </p>
+        <QuoteSisip />
+        <p>
+            Admiral Kizaru tak mampu menyelesaikan pertarungan melawan Luffy sampai membuat Gorosei turun tangan. Tak disangka, Gorosei Saturn memunculkan buah iblis yang pernah dipublikasikan sebelumnya.
+        </p>
+        <LinkSisip />
+        <p>
+            Buah iblis milik Gorosei Saturn berubah ke wujud raksasa seperti Monkey D
+            Luffy. Tipenya yakni Mythical Zoan, dan diketahui sama seperti punya Luffy.
+            Dalam wujudnya yang sekarang, Gorosei lebih mudah untuk melawan Luffy, yang
+            juga sedang menggunakan Gear kelima.
+        </p>
+
+        <h2 id="anchor-1">100 kemenangan di liga Champions</h2>
+        <p>
+            Luffy ada dalam wujud raksasa sama seperti Gorosei. Dalam beberapa halaman
+            bocoran, Gorosei tampak lebih unggul ketika bertarung melawan Luffy.
+        </p>
+        <p>
+            Sang pemeran utama pun terlihat terjatuh tersungkur akibat kekuatan Gorosei.
+            Eiichiro Oda membuktikan bahwa kekuatan Gorosei tampak lebih kuat dari
+            Luffy, satu per satu serangan menghantam Luffy.
+        </p>
+        <h3>3. Rorouni Kenshin: The Final</h3>
+        <PicSisip />
+        <p>
+            Bisakah Luffy menahan ketika bertarung melawan Gorosei? Bagaimana nasib
+            Vegapunk yang juga menjadi sasaran?
+        </p>
+
+        <h2 id="anchor-2">Catatan Kemengana Tertinggi</h2>
+        <p>
+            Dalam bocoran panel comic lainnya, Zoro versus Lucci. Pedang Zoro tampak
+            menyala layaknya api, dan Lucci memakai wujud kebangkitannya.
+        </p>
+        <TableSisip />
+
+        <h6 class="mgb-16">Preview Embed Facebook</h6>
+
+        <div class="sisip_embed_sosmed">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewbiePatahHati%2Fposts%2F1522935084413921&width=500" frameborder="0" style="border: none; overflow: hidden;" scrolling="no" width="500" height="655"></iframe>
+        </div>
+
+        <p>
+            "Dengan level ini, kamu tidak akan bisa melawan kapten kami," kata Zoro.
+        </p>
+
+        <LinkSisip title="Satoru Gojo Mati, Ucapan Duka Mengalir di Linimasa X" url="https://hot.detik.com/book/d-6943389/satoru-gojo-mati-ucapan-duka-mengalir-di-linimasa-x" />
+
+        <p>"Aku bisa membunuh kru Yonko nomor dua," lanjutnya.</p>
+
+        <h2 id="anchor-3">Langkah ke Babak 16 Besar Liga Champions</h2>
+        <p>
+            One Piece tersedia untuk dibaca melalui Viz Media. Serial ini dapat dibaca
+            oleh para penggemarnya secara resmi dan gratis di Shonen Jump dan aplikasi
+            Manga Plus. One Piece chapter berikutnya, One Piece 1094 akan dirilis pada 8
+            Oktober 2023.
+        </p>
+        
+        <strong>
+            Simak Video "
+            <span id="aevp_title">
+            Netflix Akhirnya Rilis Trailer One Piece Live Action
+            </span>
+            "
+        </strong>
+        <br />
+        <div class="sisip_video_ds">
+            <iframe
+            scrolling="no"
+            style="border:0;text-align:left;"
+            allow="autoplay; fullscreen"
+            loading="eager"
+            src="https://20.detik.com/embed/230619046?smartautoplay=true&amp;smartautoplaylazy=true&amp;unmute=true"
+            width="518px"
+            height="291.375px"
+            class="video20detik_0"
+            ></iframe>
+        </div>
+        
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+        <ol>
+            <li>ordered list</li>
+            <li>ordered list</li>
+            <li>ordered list</li>
+        </ol>    
+        <ul>
+            <li>unordered list</li>
+            <li>unordered list</li>
+            <li>unordered list</li>
+        </ul>
+        <br />
+        <strong>(tia/pus)</strong>
+        {
+            detailType === "multiple" ?
+            <MultiplePage /> : null
+        }
+        {
+            detailType === "longstory" ?
+            <LongstoryPage /> : null
+        }
+        
+        <ArtikelSelanjutnya className="my-5" />
+        <Newstag />
+    </div>
+    <Skycrapper />    
+</div> : null
+}

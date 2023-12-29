@@ -1,0 +1,24 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+    className?: string;
+    textCn?: string;
+    textActiveCn?: string;
+    textDotCn?: string;
+    prev?: string;
+    next?: string;
+}
+const { className, textCn, textActiveCn, textDotCn, prev = "Prev", next = "Next" } = Astro.props;
+---
+
+<div class={cn(["flex flex-1 items-center justify-center duration-700",className])}>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>{prev}</a>
+    <a class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textActiveCn])}>1</a>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>2</a>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>3</a>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>4</a>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>5</a>
+    <span class={cn(["block m-1.5 px-2 py-1.5 leading-none", textDotCn])}>...</span>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>15</a>
+    <a href="#" class={cn(["block m-1.5 px-2 py-1.5 transition-colors duration-300 leading-none",textCn])}>{next}</a>
+</div>

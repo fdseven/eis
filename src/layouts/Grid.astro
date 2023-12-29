@@ -1,0 +1,18 @@
+---
+import { cn } from "@/lib/utils";
+interface Props {
+  className?: string;
+  sidebarClassName?: string;
+  mainClassName?: string;
+}
+const { className, sidebarClassName, mainClassName } = Astro.props;
+---
+
+<div class={cn("grid grid-cols-[minmax(694px,_1fr)_334px] gap-[26px]", className)}>
+  <div class={cn("grid px-0 content-start", mainClassName)}>
+    <slot />
+  </div>
+  <div class={cn("grid px-0 content-start gap-12", sidebarClassName)}>
+    <slot name="sidebar" />
+  </div>
+</div>

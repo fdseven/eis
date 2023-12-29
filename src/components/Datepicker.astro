@@ -1,0 +1,102 @@
+---
+import "../../node_modules/air-datepicker/air-datepicker.css";
+---
+
+<input
+  id="tgl"
+  type="text"
+  class="px-4 py-2 text-sm border-none rounded focus:ring-orangepop focus:border-none datepicker"
+  value="SEMUA TANGGAL"
+/>
+<script type="module">
+  //@ts-ignore
+  import airDatepicker from "https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/+esm";
+  const localeEn = {
+    days: [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+    months: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    monthsShort: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    today: "Today",
+    clear: "Clear",
+    dateFormat: "MM/dd/yyyy",
+    timeFormat: "hh:mm aa",
+    firstDay: 0,
+  };
+  let button = {
+    content: "Close",
+    className: "close-btn",
+    onClick: (dp) => {
+      dp.hide();
+    },
+  };
+  new airDatepicker(".datepicker", {
+    locale: localeEn,
+    position: "bottom right",
+    buttons: ["clear", "today", button],
+  });
+</script>
+
+<style is:global>
+  .air-datepicker {
+    --adp-accent-color: #f36b32;
+    --adp-day-name-color: #000;
+    --adp-day-name-color-hover: var(--adp-accent-color);
+    /* --adp-color-current-date: var(--adp-accent-color); */
+    --adp-cell-background-color-selected: var(--adp-accent-color);
+    --adp-cell-background-color-selected-hover: var(--adp-accent-color);
+    --adp-cell-background-color-hover: var(--adp-accent-color);
+    --adp-background-color-active: var(--adp-accent-color);
+    --adp-btn-color: #000;
+    --adp-btn-color-hover: #fff;
+    --adp-btn-background-color-hover: var(--adp-accent-color);
+    --adp-btn-background-color-active: var(--adp-accent-color);
+  }
+  .air-datepicker-button {
+    @apply font-bold transition-none;
+  }
+  .air-datepicker-cell:hover,
+  .air-datepicker-cell.-current-:hover {
+    @apply text-white;
+  }
+  .air-datepicker-body--day-names {
+    @apply font-bold;
+  }
+  .air-datepicker-cell.-current- {
+    @apply bg-brand text-white;
+  }
+</style>

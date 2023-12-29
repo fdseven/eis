@@ -1,0 +1,101 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./fonts" layer(base);
+
+@layer base {
+  /* This will be included in your compiled CSS */
+  body {
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    line-height: 1.5em;
+    @apply text-primary text-sm;
+  }
+}
+
+@layer components {
+  /* This won't be included in your compiled CSS unless you actually use it */
+  .detail__body {
+    @apply mb-5;
+    :where(p:first-of-type) {
+      @apply inline;
+    }
+    >:where(a) {
+      @apply text-[#ED2C92] transition-colors duration-300;
+      &:hover {
+        @apply underline text-[#6D51A1];
+      }
+    }
+    > :where(*) {
+      @apply my-5;
+    }
+    :where(h1, h2, h3, h4, h5, h6) {
+      @apply font-bold m-0;
+    }
+    :where(h1, h2, h3, h4, h5, h6) + p {
+      @apply mt-2;
+    }
+    :where(h1) {
+      @apply text-[32px];
+    }
+    :where(h2) {
+      @apply text-[22px];
+    }
+    :where(h3) {
+      @apply text-xl;
+    }
+    :where(h4, h5, h6) {
+      @apply text-base;
+    }
+    :where(ol) {
+      @apply list-decimal pl-5;
+    }
+    :where(ul) {
+      @apply list-disc pl-5;
+    }
+    :where(ul ul) {
+      @apply list-circle;
+    }
+    .sisip_video_ds {
+      @apply aspect-video relative bg-[#F7F7F7];
+      iframe {
+        @apply absolute inset-0 w-full h-full;
+      }
+    }
+  }
+  .table-wrap {
+    @apply text-base block w-full relative overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      td {
+        border: 1px solid #b3b3b3;
+        padding: 5px 10px;
+      }
+    }
+    .table-strip tr:nth-of-type(odd) {
+      background-color: #f7f7f7;
+    }
+    .table-review {
+      @apply w-full;
+      > tbody > tr {
+        > td {
+          border: 1px solid #d9d9d9;
+          border-left: transparent;
+          border-right: transparent;
+          padding: 10px 0px;
+        }
+      }
+    }
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+  .input-filter {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0001 2.5C12.2956 2.5 14.546 2.69337 16.7359 3.06472C17.1799 3.14002 17.5 3.52796 17.5 3.97835V4.84835C17.5 5.34563 17.3025 5.82254 16.9508 6.17417L12.4242 10.7008C12.0725 11.0525 11.875 11.5294 11.875 12.0267V14.4662C11.875 15.1764 11.4737 15.8256 10.8385 16.1432L8.125 17.5V12.0267C8.125 11.5294 7.92746 11.0525 7.57583 10.7008L3.04917 6.17417C2.69754 5.82254 2.5 5.34563 2.5 4.84835V3.97837C2.5 3.52798 2.82006 3.14004 3.26412 3.06474C5.45399 2.69338 7.70444 2.5 10.0001 2.5Z' stroke='%23121212' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-position: calc(100% - 16px) center;
+    background-repeat: no-repeat;
+  }
+}

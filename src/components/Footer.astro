@@ -1,0 +1,340 @@
+---
+import fbImg from "@/assets/facebook.png"
+import xImg from '@/assets/twitter.png'
+import waImg from '@/assets/whatsapp.png'
+import IgImg from '@/assets/instagram.png'
+import LnImg from '@/assets/linkedin.png'
+import YtImg from '@/assets/youtube.png'
+import TkImg from '@/assets/tiktok.png'
+import { Image } from "astro:assets";
+---
+
+<footer>
+	<div class="footer min-w-[1080px]">
+		<div class="footer__border"></div>
+		<div class="container min-w-[1080px]">
+			<div class="grid-row footer__grid">
+				<div class="column-3 text-center" style="padding-inline:0px;">
+					<div class="footer__logo">
+						<a href="">
+							<img src="https://cdn.detik.net.id/assets/images/webp/logo_detikcom.webp?v=2023100213152" alt="img-alt" title="img-title">
+						</a>
+					</div>
+					<div class="footer-title footer-title__partof">part of <img src="https://cdn.detik.net.id/assets/images/webp/logo_detiknetwork.webp?v=2023100213152" alt="img-alt" title="img-title"></div>
+					<div class="footer__social flex flex-wrap gap-x-1.5 justify-center">
+						<div class="footer-title footer-title__connect w-full">Connect With Us</div>
+            <a href="#" class="w-8">
+              <Image src={waImg} alt={"Whatsapp"} format='webp' loading={"eager"} />   
+            </a>
+						<a href="#" class="w-8">
+              <Image src={fbImg} alt={"Facebook"} format='webp' loading={"eager"} />   
+            </a>
+						<a href="#" class="w-8">
+              <Image src={xImg} alt={"Twitter"} format='webp' loading={"eager"} class="shadow-[0_0_2px_1px_rgba(255,255,255,0.5)] rounded-full" />   
+            </a>
+            <a href="#" class="w-8">
+              <Image src={IgImg} alt={"Instagram"} format='webp' loading={"eager"} class="shadow-[0_0_2px_1px_rgba(255,255,255,0.5)] rounded-full" />   
+            </a>
+            <a href="#" class="w-8">
+              <Image src={LnImg} alt={"Linkedin"} format='webp' loading={"eager"} class="shadow-[0_0_2px_1px_rgba(255,255,255,0.5)] rounded-full" />   
+            </a>
+            <a href="#" class="w-8">
+              <Image src={YtImg} alt={"Youtube"} format='webp' loading={"eager"} class="shadow-[0_0_2px_1px_rgba(255,255,255,0.5)] rounded-full" />   
+            </a>
+            <a href="#" class="w-8">
+              <Image src={TkImg} alt={"Tiktok"} format='webp' loading={"eager"} class="shadow-[0_0_2px_1px_rgba(255,255,255,0.5)] rounded-full" />   
+            </a>
+					</div>
+					<div class="footer-title footer-title__copyright">Copyright @ 2023 detikcom. <br>All right reserved</div>
+				</div>
+				<nav class="column-3 footer-nav">
+					<div class="footer-nav--title">Kategori</div>
+					<ul class="nav nav--column nav--column-2">
+						<li class="nav__item"><a href="">News</a></li>
+						<li class="nav__item"><a href="">Finance</a></li>
+						<li class="nav__item"><a href="">Teknologi</a></li>
+						<li class="nav__item"><a href="">Entertaiment</a></li>
+						<li class="nav__item"><a href="">Sport</a></li>
+						<li class="nav__item"><a href="">Sepakbola</a></li>
+						<li class="nav__item"><a href="">Otomotif</a></li>
+						<li class="nav__item"><a href="">Travel</a></li>
+						<li class="nav__item"><a href="">Food</a></li>
+						<li class="nav__item"><a href="">Health</a></li>
+						<li class="nav__item"><a href="">Wolipop</a></li>
+						<li class="nav__item"><a href="">DetikX</a></li>
+						<li class="nav__item"><a href="">20Detik</a></li>
+						<li class="nav__item"><a href="">Foto</a></li>
+					</ul>
+				</nav>
+				<nav class="column-2 footer-nav">
+					<div class="footer-nav--title">Layanan</div>
+					<ul class="nav nav--column">
+						<li class="nav__item"><a href="">Pasang Mata</a></li>
+						<li class="nav__item"><a href="">Adsmart</a></li>
+						<li class="nav__item"><a href="">Forum</a></li>
+						<li class="nav__item"><a href="">detikEvent</a></li>
+						<li class="nav__item"><a href="">detikPoint</a></li>
+						<li class="nav__item"><a href="">Trans Snow World</a></li>
+						<li class="nav__item"><a href="">Trans Studio</a></li>
+					</ul>
+				</nav>
+				<nav class="column-2 footer-nav">
+					<div class="footer-nav--title">Informasi</div>
+					<ul class="nav nav--column">
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/redaksi.php">Redaksi</a></li>
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/pedoman-media-siber.php">Pedoman Media Siber</a></li>
+						<li class="nav__item"><a href="">Karir</a></li>
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/kotak-pos.php">Kotak Pos</a></li>
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/info-iklan.php">info Iklan</a></li>
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/privacy-policy.php">Privacy Policy</a></li>
+						<li class="nav__item"><a href="//online.detik.com/design/detik/desktop/detikcom/disclaimer.php">Disclaimer</a></li>
+					</ul>	
+				</nav>
+				<nav class="column-2 footer-nav">
+					<div class="footer-nav--title">Jaringan Media</div>
+					<ul class="nav nav--column">
+						<li class="nav__item"><a href="">CNN Indonesia</a></li>
+						<li class="nav__item"><a href="">CNBC Indonesia</a></li>
+						<li class="nav__item"><a href="">Haibunda</a></li>
+						<li class="nav__item"><a href="">Insertlive</a></li>
+						<li class="nav__item"><a href="">Beautynesia</a></li>
+						<li class="nav__item"><a href="">Female Daily</a></li>
+						<li class="nav__item"><a href="">CXO Media</a></li>
+					</ul>
+				</nav>
+			</div>	
+		</div>
+	</div>
+</footer>
+
+<style is:global lang="scss">
+footer {
+  display: block;
+  width: 100%;
+  .container {
+    padding-left: calc(26px / 2);
+    padding-right: calc(26px / 2);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container {
+    width: 1080px;
+  }
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .container {
+      width: 1008px;
+    }
+  }
+  .grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-26px / 2);
+    margin-right: calc(-26px / 2);
+  }
+  .column-2,
+  .column-3 {
+    position: relative;
+    width: 100%;
+    padding-left: calc(26px / 2);
+    padding-right: calc(26px / 2);
+  }
+  .column-2 {
+    -ms-flex: calc(2 / 12);
+    flex: 0 0 calc(100% / (12 / 2));
+    max-width: calc(100% / (12 / 2));
+  }
+  .column-3 {
+    -ms-flex: calc(3 / 12);
+    flex: 0 0 calc(100% / (12 / 3));
+    max-width: calc(100% / (12 / 3));
+  }
+  .icon-item { position: relative; display: inline-flex; align-items: center; justify-content: center; margin: 5px 1px; cursor: pointer; width: 30px; height: 30px; vertical-align: middle; font-size: 18px; border-radius: 50%; }
+  .icon-item__fb, .icon-item__fb:hover { color: #FFFFFF; background: #3C5A99; }
+  .icon-item__tw, .icon-item__tw:hover { color: #FFFFFF; background: #000000; }
+  .icon-item__ig, .icon-item__ig:hover { color: #FFFFFF; background: #5851DB; /* Old browsers */ background: -moz-radial-gradient(left bottom, ellipse cover, #ffdc80 15%, #e1306c 55%, #5851db 100%); /* FF3.6+ */ background: -webkit-radial-gradient(left bottom, ellipse cover, #ffdc80 15%, #e1306c 55%, #5851db 100%); /* Chrome10-25,Safari5.1-6 */ background: radial-gradient(ellipse at left bottom, #ffdc80 15%, #e1306c 55%, #5851db 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top_color', endColorstr='$bottom_color',GradientType=1 ); /* IE6-9 */ }
+  .icon-item__in, .icon-item__in:hover { color: #FFFFFF; background: #0077B5; }
+  .icon-item__yt, .icon-item__yt:hover { color: #FFFFFF; background: #FF0000; }
+  .icon-item__wa, .icon-item__wa:hover { color: #FFFFFF; background: #25D366; }
+  .icon-item__tele, .icon-item__tele:hover { color: #FFFFFF; background: #0088CC; }
+  .icon-item__link, .icon-item__link:hover { color: #FFFFFF; background: #999999; }
+  
+  .nav {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  .nav a {
+    display: block;
+  }
+  .nav__item {
+    position: relative;
+    padding: 0;
+  }
+  .nav__item a {
+    padding: 12px 10px;
+    @apply transition-colors duration-300;
+  }
+  .nav--column .nav__item a {
+    padding: 4px 0;
+  }
+  .footer-nav .nav__item a {
+    font-size: 12px;
+    color: #666666;
+  }
+  .nav--column .nav__item {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
+  .nav--column {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav--column-2 {
+    display: inherit !important;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .footer-nav .nav__item {
+    font-weight: 400;
+  }
+  .nav,
+  .footer-nav--title {
+    font-weight: 600;
+  }
+  .nav,
+  .footer-title,
+  .footer-nav--title {
+    font-family: Montserrat, Arial, Tahoma, sans-serif;
+  }
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: wrap;
+  }
+  .icon-item {
+    text-align: center !important;
+  }
+  .footer-nav .nav__item a:hover,
+  .footer-nav--title {
+    color: #000000;
+  }
+  .footer__border {
+    @apply bg-popgradient;
+  }
+  .footer {
+    background: #f0f0f0;
+  }
+  .footer__logo {
+    margin: 12px 0 8px;
+    display: inline-block;
+  }
+  .footer__logo img {
+    width: 189px;
+  }
+  .footer-title {
+    font-size: 12px;
+  }
+  .footer-title__copyright {
+    color: #666666;
+    margin-top: 40px;
+  }
+  .footer-title__connect {
+    color: #333333;
+    margin-bottom: 4px;
+  }
+  .footer-title__partof {
+    color: #666666;
+    padding: 4px 0;
+    @apply inline-flex items-end leading-4;
+  }
+  .footer-title__partof img {
+    width: 80px;
+    vertical-align: bottom;
+    margin: 0 0 3px 3px;
+  }
+  .footer__social {
+    margin-top: 40px;
+    margin-bottom: 4px;
+  }
+  .footer__grid {
+    padding: 32px 0 52px;
+  }
+  .footer-nav {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+  }
+  .footer-nav--title {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .footer__border {
+    height: 4px;
+  }
+  .icon-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    font-size: 18px;
+    border-radius: 50%;
+  }
+  .icon-item__fb,
+  .icon-item__fb:hover {
+    color: #ffffff;
+    background: #3c5a99;
+  }
+  .icon-item__tw,
+  .icon-item__tw:hover {
+    color: #ffffff;
+    background: #1da1f2;
+  }
+  .icon-item__ig,
+  .icon-item__ig:hover {
+    color: #ffffff;
+    background: #5851db;
+    background: -moz-radial-gradient(
+      left bottom,
+      ellipse cover,
+      #ffdc80 15%,
+      #e1306c 55%,
+      #5851db 100%
+    );
+    background: -webkit-radial-gradient(
+      left bottom,
+      ellipse cover,
+      #ffdc80 15%,
+      #e1306c 55%,
+      #5851db 100%
+    );
+    background: radial-gradient(
+      ellipse at left bottom,
+      #ffdc80 15%,
+      #e1306c 55%,
+      #5851db 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top_color', endColorstr='$bottom_color',GradientType=1 );
+  }
+  .icon-item__in,
+  .icon-item__in:hover {
+    color: #ffffff;
+    background: #0077b5;
+  }
+  .icon-item__yt,
+  .icon-item__yt:hover {
+    color: #ffffff;
+    background: #ff0000;
+  }
+}
+</style>

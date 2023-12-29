@@ -1,0 +1,13 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+    className?: string;  
+};
+const { className } = Astro.props;
+---
+<div class={cn(["text-xs uppercase breadcrumbs duration-1000", className])}>
+    <ul>
+      <li><a href="#" class="hover:text-purplepop transition-colors duration-300">Culture</a></li> 
+      <li><a href="#" class="hover:text-purplepop transition-colors duration-300">Anime</a></li>       
+    </ul>
+</div>

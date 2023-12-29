@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@/lib/utils";
+
+type Props = HTMLAttributes<"a">;
+const { href ="#", class: className, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+
+const defaultClassName = "block whitespace-nowrap px-2.5 text-[#383838] hover:text-[#6D51A1] transition-all duration-300"
+---
+
+<a class={cn([defaultClassName, className, {"font-semibold text-[#6D51A1]": isActive}])} href={href} {...props}>
+    <span class="flex py-2 border-b border-black/20 group-last/link:border-transparent"><slot /></span>
+</a>

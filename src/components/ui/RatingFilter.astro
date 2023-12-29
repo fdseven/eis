@@ -1,0 +1,67 @@
+---
+import { cn } from "@/lib/utils";
+interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+{
+    Array.from({ length: 5 }, (_, i) => {
+        return (
+        <li class="flex justify-between items-center py-1.5 border-b border-black/5">
+            <label for={`rating-${i+1}`} class={`rating relative inline-flex gap-2 rating--${i+1} cursor-pointer flex-1`}>
+                {
+                Array.from({ length: 5 }, (_, i) => {
+                return (
+                    <span class={cn("mask-star opacity-20", className)}></span>
+                ); }) }
+            </label>
+            <input id={`rating-${i+1}`} name="rating" type="checkbox" class="cursor-pointer text-[#A02094] accent-[#A02094] border-2 rounded-sm border-black-light1 focus:ring-0">
+        </li>
+        );
+    })
+}
+
+<style is:global>
+    .rating {    
+        span {
+            background-color: currentColor;
+        }
+        &--5 {
+            span:nth-child(-n + 5) {
+                @apply opacity-100;
+            }
+        }
+        &--4 {
+            span:nth-child(-n + 4) {
+                @apply opacity-100;
+            }
+        }
+        &--3 {
+            span:nth-child(-n + 3) {
+                @apply opacity-100;
+            }
+        }
+        &--2 {
+            span:nth-child(-n + 2) {
+                @apply opacity-100;
+            }
+        }
+        &--1 {
+            span:nth-child(-n + 1) {
+                @apply opacity-100;
+            }
+        }
+    }
+    .mask-star {
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTkyJyBoZWlnaHQ9JzE4MCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBmaWxsPSdibGFjaycgZD0nbTk2IDE1My4wNDQtNTguNzc5IDI2LjI0MyA3LjAyLTYzLjUxM0wuODk0IDY4LjQ4MWw2My4xMTctMTMuMDFMOTYgMGwzMS45ODkgNTUuNDcyIDYzLjExNyAxMy4wMS00My4zNDcgNDcuMjkyIDcuMDIgNjMuNTEzeicgZmlsbC1ydWxlPSdldmVub2RkJy8+PC9zdmc+);
+        mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTkyJyBoZWlnaHQ9JzE4MCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBmaWxsPSdibGFjaycgZD0nbTk2IDE1My4wNDQtNTguNzc5IDI2LjI0MyA3LjAyLTYzLjUxM0wuODk0IDY4LjQ4MWw2My4xMTctMTMuMDFMOTYgMGwzMS45ODkgNTUuNDcyIDYzLjExNyAxMy4wMS00My4zNDcgNDcuMjkyIDcuMDIgNjMuNTEzeicgZmlsbC1ydWxlPSdldmVub2RkJy8+PC9zdmc+);
+    }
+</style>

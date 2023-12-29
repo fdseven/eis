@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import logoEIS from "@/assets/logo-eis.png";
+import Button from "@/components/ui/Button.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="EIS"
+  description="Welcome to EIS!">
+  
+    <h1 class="font-bold text-xl mb-2">Selamat Datang!</h1>  
+    Selamat Datang! Untuk masuk, pastikan nomor hp anda aktif.
+
+    <form action="tps-survei" method="post" class="grid gap-5 mt-6">
+
+      <div>
+        <label for="user" class="block text-xs leading-6">Username/Nomor HP</label>
+        <div class="mt-1 relative">
+          <input id="user" name="user" type="text" autocomplete="user" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Contoh : 081234567890">
+        </div>
+      </div>
+      <div>
+        <label for="password" class="block text-xs leading-6">Password</label>
+        <div class="mt-1 relative">
+          <input id="password" name="password" type="password" autocomplete="password" class="block w-full rounded-full border-0 pr-12 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan Password">
+          <span id="__show_password" class="icon-eye icon-eye--off w-5 h-5 absolute right-5 top-3.5"></span>
+        </div>
+      </div>
+      <label class="relative flex gap-x-3">
+        <span class="flex h-6 items-center">
+            <input id="keep" name="keep" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-brand focus:ring-0">
+        </span>
+        <span class="text-sm leading-6">Biarkan saya tetap masuk</span>
+      </label>
+      <div class="my-3 w-full">
+        <Button type="submit" id="form_login" isButton={true} disabled className="w-full">Masuk</Button>
+      </div>
+      
+    </form>
+    
+    <div class="absolute bottom-6 left-5 right-5 flex flex-col items-center text-tertiary font-light">
+      Developed by : 
+      <a href="#" class="h-9 [&>img]:w-auto [&>img]:h-full">
+        <Image src={logoEIS} alt="Election Interaction System." />
+      </a>  
+    </div>
+    
+</MainLayout>
+
+<style is:global>
+  .icon-eye {
+    background-size: contain;
+    &--off {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpath d='M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24'%3E%3C/path%3E%3Cline x1='1' y1='1' x2='23' y2='23'%3E%3C/line%3E%3C/svg%3E");
+    }
+    &--on {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3C/svg%3E");
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  $("document").ready(function(){
+      $("#__show_password").on("click", function(){
+          if($("#password").attr('type')=='password'){
+              $("#password").attr('type','text');
+              $('.icon-eye').removeClass('icon-eye--off').addClass('icon-eye--on');
+          }else{
+              $("#password").attr('type','password');
+              $('.icon-eye').removeClass('icon-eye--on').addClass('icon-eye--off');
+          }
+      })    
+  });
+
+  $('input').on("keyup mouseup", function(e) {
+      e.preventDefault();
+      if($("#user").val() && $("#password").val()){
+        $("#form_login").prop("disabled", false);
+      } else {
+        $("#form_login").prop("disabled", true);
+      }
+  });
+</script>

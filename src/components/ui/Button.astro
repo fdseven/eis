@@ -1,0 +1,45 @@
+---
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const buttonVariants = cva(
+  "border border-2 inline-flex items-center justify-center font-semibold disabled:cursor-not-allowed disabled:bg-[#D5DAE1] disabled:border-transparent rounded-full hover:border-transparent focus:outline-none",
+  {
+    variants: {
+      variant: {
+        default:
+          "text-white bg-brand border-brand focus:ring-4 focus:ring-[#FFD1E2] disabled:bg-brand/30",
+        light:
+          "text-primary border-[#D5DAE1] hover:bg-white hover:border-[transparent] focus:bg-[transparent] focus:ring-0",
+        dark:
+          "text-white bg-dark border-[transparent] focus:ring-0",
+      },
+      size: {
+        default: "text-base px-4 py-3",
+        sm: "text-xs px-4 py-2",
+        lg: "text-lg px-7 py-4",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+interface Props {
+  variant?: VariantProps<typeof buttonVariants>["variant"];
+  size?: VariantProps<typeof buttonVariants>["size"];
+  className?: string;
+  isButton?: boolean;
+}
+
+const { variant, size, className, isButton = true, ...rest } = Astro.props;
+
+const Tag = isButton ? "button" : "a";
+
+---
+
+<Tag class={cn(buttonVariants({ variant, size, className }))} {...rest}>
+  <slot>Default</slot>
+</Tag>
