@@ -1,0 +1,153 @@
+---
+import UploadFotoProfile from "@/components/UploadFotoProfile.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ModalFilterDPT from "../components/ModalFilterDPT.astro";
+import ButtonSticky from "@/components/ui/ButtonSticky.astro";
+import NavMenuDpt from "@/components/NavMenuDpt.astro";
+---
+
+<MainLayout
+  title="EIS"
+  description="Welcome to EIS!" mainClassName="pb-0">
+
+    <ModalFilterDPT />
+
+    <div class="grid grid-cols-2 gap-3 mb-5">
+        <a href="#" class="block rounded-xl px-3 py-2.5 text-center text-brand font-semibold border border-brand bg-brand-secondary">Survei</a>
+        <a class="block rounded-xl px-3 py-2.5 text-center text-tertiary font-semibold border border-[#E7E9F0] bg-transparent">Hasil Suara</a>
+    </div>
+  
+    <h1 class="font-bold text-xl flex gap-2 items-center">
+        <a href="#">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 7H1M1 7L7 13M1 7L7 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>    
+        </a>
+        Survey Data DPT
+    </h1>  
+
+    <div class="grid gap-5 mt-3">
+      <div>
+        <div class="mt-1 relative">
+          <input id="filter" name="filter" type="text" autocomplete="filter" data-toggle="modal" data-dismiss="modal" data-target="#modal-filter" readonly class="input-icon input-filter block w-full rounded-full border-0 pr-10 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Pilih kecamatan, desa, TPS" value="Satui, Sungai, TPS 1">
+        </div>
+      </div>
+      <div>
+        <div class="mt-1 relative">
+            <select id="dpt" class="select-dpt form-element" name="dpt">
+                <option></option>
+                <option value="Pemilih A">Pemilih A</option>
+                <option value="Pemilih B">Pemilih B</option>
+                <option value="Pemilih C">Pemilih C</option>
+                <option value="Pemilih D">Pemilih D</option>
+                <option value="Pemilih E">Pemilih E</option>
+                <option value="Pemilih F">Pemilih F</option>
+                <option value="Pemilih G">Pemilih G</option>
+                <option value="Pemilih A">Pemilih A</option>
+                <option value="Pemilih B">Pemilih B</option>
+                <option value="Pemilih C">Pemilih C</option>
+                <option value="Pemilih D">Pemilih D</option>
+                <option value="Pemilih E">Pemilih E</option>
+                <option value="Pemilih F">Pemilih F</option>
+                <option value="Pemilih G">Pemilih G</option>
+                <option value="Pemilih A">Pemilih A</option>
+                <option value="Pemilih B">Pemilih B</option>
+                <option value="Pemilih C">Pemilih C</option>
+                <option value="Pemilih D">Pemilih D</option>
+                <option value="Pemilih E">Pemilih E</option>
+                <option value="Pemilih F">Pemilih F</option>
+                <option value="Pemilih G">Pemilih G</option>
+            </select>
+        </div>
+      </div>
+    </div>
+
+    <NavMenuDpt />
+    
+    <form id="t-pribadi" action="#" method="post" class="grid gap-5 mt-3">
+        <div>
+            <label for="nik" class="block text-xs leading-6">NIK</label>
+            <div class="mt-1 relative">
+                <input id="nik" name="nik" type="text" autocomplete="nik" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan 16 digit NIK">
+            </div>
+        </div>
+        <div>
+            <label for="nama" class="block text-xs leading-6">Nama</label>
+            <div class="mt-1 relative">
+                <input id="nama" name="nama" type="text" autocomplete="nama" class="block w-full rounded-full border-0 pr-12 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan nama">
+            </div>
+        </div>
+        <div>
+            <label for="tlp" class="block text-xs leading-6">No. Telepon</label>
+            <div class="mt-1 relative">
+                <input id="tlp" name="tlp" type="text" autocomplete="tlp" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Contoh : 081234567890">
+            </div>
+            <label class="relative flex gap-x-3 mt-1">
+                <span class="flex h-6 items-center">
+                    <input id="keep" name="keep" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-brand focus:ring-0">
+                </span>
+                <span class="text-sm leading-6">WhatsApp</span>
+            </label>
+        </div>
+        
+        <div>
+            <label for="email" class="block text-xs leading-6">Email</label>
+            <div class="mt-1 relative">
+                <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan email">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+            <div>
+                <label for="jk" class="block text-xs leading-6">Jenis Kelamin</label>
+                <div class="mt-1 relative">
+                    <select id="jk" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" name="jk">
+                        <option value="0">Pilih</option>
+                        <option value="1">Laki-laki</option>
+                        <option value="2">Perempuan</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="usia" class="block text-xs leading-6">Usia</label>
+                <div class="mt-1 relative">
+                    <input id="usia" name="usia" type="email" autocomplete="usia" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukkan usia">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <label for="krj" class="block text-xs leading-6">Pekerjaan</label>
+            <div class="mt-1 relative">
+                <select id="krj" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" name="jk">
+                    <option value="0">Pilih</option>
+                    <option value="1">Swasta</option>
+                    <option value="2">Wiraswasta</option>
+                    <option value="3">PNS</option>
+                    <option value="4">Mahasiswa</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="foto" class="block text-xs leading-6">Foto Selfie</label>
+            <div class="mt-1 relative flex items-center gap-4">
+                <UploadFotoProfile />
+            </div>
+        </div>
+
+        <ButtonSticky />
+    </form>
+    
+</MainLayout>
+
+<script type="text/javascript">
+    $(".select-dpt").select2({
+        placeholder: "Pilih Data Pemilih Tetap",
+        language: {
+            noResults:function() {
+                return"Data tidak ditemukan";
+            }
+        }
+    });
+</script>

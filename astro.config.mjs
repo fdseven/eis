@@ -6,7 +6,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://online.detik.com",
+  site: "https://astro.build/config",
   //Change to your site URL
   vite: {
     build: {

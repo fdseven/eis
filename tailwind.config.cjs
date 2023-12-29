@@ -11,14 +11,6 @@ module.exports = {
       fontFamily: {
         helvetica: ["Helvetica", "Arial", "sans-serif"],
       },
-      boxShadow: {
-        'yellow': '4px 4px #FED401',
-        'orange': '4px 4px #F36B32',
-        'headline': '30px 30px 1px 0px #FED401',
-      },
-      backgroundImage: {
-        'triangle-arrow': "url('/design/static/detikpop/desktop/preview/images/triangle-arrow.png')",
-      },
       listStyleType: {
         circle: 'circle',
       }
@@ -51,19 +43,6 @@ module.exports = {
       addUtilities({
         ".text-balance": {
           "text-wrap": "balance",
-        },
-        ".text-gradient": {
-          background:
-            "linear-gradient(90deg, #6D51A1 0%, #ED2C92 34.9%, #F36B32 69.79%, #FED401 100%)",
-          "background-clip": "text",
-          "-webkit-background-clip": "text",
-          " -webkit-text-fill-color": "transparent",
-        },
-        ".text-shadow": {
-          "text-shadow": "3px 3px 1px #000;",
-        },
-        ".text-shadow-pinkpop": {
-          "text-shadow": "3px 3px 1px #ED2C92;",
         },
       });
     },

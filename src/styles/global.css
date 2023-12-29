@@ -11,58 +11,23 @@
     line-height: 1.5em;
     @apply text-primary text-sm;
   }
+  .img-upload__temp {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 12px;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
 }
 
 @layer components {
   /* This won't be included in your compiled CSS unless you actually use it */
-  .detail__body {
-    @apply mb-5;
-    :where(p:first-of-type) {
-      @apply inline;
-    }
-    >:where(a) {
-      @apply text-[#ED2C92] transition-colors duration-300;
-      &:hover {
-        @apply underline text-[#6D51A1];
-      }
-    }
-    > :where(*) {
-      @apply my-5;
-    }
-    :where(h1, h2, h3, h4, h5, h6) {
-      @apply font-bold m-0;
-    }
-    :where(h1, h2, h3, h4, h5, h6) + p {
-      @apply mt-2;
-    }
-    :where(h1) {
-      @apply text-[32px];
-    }
-    :where(h2) {
-      @apply text-[22px];
-    }
-    :where(h3) {
-      @apply text-xl;
-    }
-    :where(h4, h5, h6) {
-      @apply text-base;
-    }
-    :where(ol) {
-      @apply list-decimal pl-5;
-    }
-    :where(ul) {
-      @apply list-disc pl-5;
-    }
-    :where(ul ul) {
-      @apply list-circle;
-    }
-    .sisip_video_ds {
-      @apply aspect-video relative bg-[#F7F7F7];
-      iframe {
-        @apply absolute inset-0 w-full h-full;
-      }
-    }
-  }
   .table-wrap {
     @apply text-base block w-full relative overflow-x-auto;
     -webkit-overflow-scrolling: touch;
@@ -93,9 +58,15 @@
       white-space: nowrap;
     }
   }
+  .input-icon {
+    background-repeat: no-repeat;
+  }
   .input-filter {
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0001 2.5C12.2956 2.5 14.546 2.69337 16.7359 3.06472C17.1799 3.14002 17.5 3.52796 17.5 3.97835V4.84835C17.5 5.34563 17.3025 5.82254 16.9508 6.17417L12.4242 10.7008C12.0725 11.0525 11.875 11.5294 11.875 12.0267V14.4662C11.875 15.1764 11.4737 15.8256 10.8385 16.1432L8.125 17.5V12.0267C8.125 11.5294 7.92746 11.0525 7.57583 10.7008L3.04917 6.17417C2.69754 5.82254 2.5 5.34563 2.5 4.84835V3.97837C2.5 3.52798 2.82006 3.14004 3.26412 3.06474C5.45399 2.69338 7.70444 2.5 10.0001 2.5Z' stroke='%23121212' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     background-position: calc(100% - 16px) center;
-    background-repeat: no-repeat;
+  }
+  .input-search {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 3.5C5.96243 3.5 3.5 5.96243 3.5 9C3.5 12.0376 5.96243 14.5 9 14.5C10.519 14.5 11.893 13.8852 12.8891 12.8891C13.8852 11.893 14.5 10.519 14.5 9C14.5 5.96243 12.0376 3.5 9 3.5ZM2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.6625 15.4197 12.1906 14.4517 13.3911L17.7803 16.7197C18.0732 17.0126 18.0732 17.4874 17.7803 17.7803C17.4874 18.0732 17.0126 18.0732 16.7197 17.7803L13.3911 14.4517C12.1906 15.4197 10.6625 16 9 16C5.13401 16 2 12.866 2 9Z' fill='%23121212'/%3E%3C/svg%3E%0A");
+    background-position: 16px center;
   }
 }
