@@ -21,8 +21,11 @@ const tagList = [
         &::-webkit-scrollbar {
 			display: none;
 		}
-        a.selected {
-            @apply border-b-2 border-brand font-semibold text-primary;
+        a {
+            @apply border-b-2 border-transparent font-semibold;
+            &.selected {
+                @apply border-brand text-primary;
+            }
         }
     }
 </style>
