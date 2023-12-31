@@ -1,0 +1,42 @@
+---
+import UploadFotoProfile from "./UploadFotoProfile.astro";
+import ButtonSticky from "./ui/ButtonSticky.astro";
+
+---
+<form id="t-dukungan" action="#" method="post" class="grid gap-5 mt-3">
+    <div>
+        <label for="dukung" class="block text-xs leading-6">Status Dukungan</label>
+        <div class="mt-1 relative">
+            <select id="dukung" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" name="dukung">
+                <option value="0">Pilih Status Dukungan</option>
+                <option value="1">Mendukung</option>
+                <option value="2">Tidak Mendukung</option>
+                <option value="3">Abstain</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <label for="kapasitas" class="block text-xs leading-6">Status Kapasitas</label>
+        <div class="mt-1 relative">
+            <select id="kapasitas" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" name="kapasitas">
+                <option value="0">Pilih Status Kapasitas</option>
+                <option value="1">Artis</option>
+                <option value="2">Influencer</option>
+                <option value="3">Pejabat</option>
+                <option value="3">Aktivis</option>
+                <option value="3">Kritikus Politik</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <label for="stakeholder" class="block text-xs leading-6">Stakeholder Pemilu</label>
+        <div class="mt-1 relative">
+            <select id="stakeholder" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" name="stakeholder">
+                <option value="0">Pilih Status Kapasitas</option>
+                <option value="1">KPPS</option>
+            </select>
+        </div>
+    </div>
+
+    <ButtonSticky />
+</form>

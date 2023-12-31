@@ -1,0 +1,160 @@
+---
+import Button from "./ui/Button.astro";
+
+---
+
+<div class="modal modal--sm modal--1 fade" id="modal-map" role="dialog" aria-labelledby="modal-map" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="sticky bg-white rounded-t-xl items-center border-b border-b-skin-line flex gap-4 h-16 px-4 py-3 right-0 top-0 w-full z-20"> 
+                <button data-dismiss="modal"> 
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.56495 6.99909L13.3381 2.23635C13.5471 2.0273 13.6646 1.74376 13.6646 1.44811C13.6646 1.15247 13.5471 0.868928 13.3381 0.659873C13.1291 0.450819 12.8456 0.333374 12.55 0.333374C12.2544 0.333374 11.9709 0.450819 11.7619 0.659873L6.9998 5.43372L2.23773 0.659873C2.02871 0.450819 1.74521 0.333374 1.4496 0.333374C1.154 0.333374 0.870502 0.450819 0.661477 0.659873C0.452453 0.868928 0.335024 1.15247 0.335024 1.44811C0.335024 1.74376 0.452453 2.0273 0.661477 2.23635L5.43464 6.99909L0.661477 11.7618C0.557435 11.865 0.474855 11.9878 0.4185 12.1231C0.362145 12.2584 0.33313 12.4035 0.33313 12.5501C0.33313 12.6966 0.362145 12.8417 0.4185 12.977C0.474855 13.1123 0.557435 13.2351 0.661477 13.3383C0.76467 13.4424 0.887441 13.525 1.02271 13.5813C1.15798 13.6377 1.30307 13.6667 1.4496 13.6667C1.59614 13.6667 1.74123 13.6377 1.8765 13.5813C2.01177 13.525 2.13454 13.4424 2.23773 13.3383L6.9998 8.56447L11.7619 13.3383C11.8651 13.4424 11.9878 13.525 12.1231 13.5813C12.2584 13.6377 12.4034 13.6667 12.55 13.6667C12.6965 13.6667 12.8416 13.6377 12.9769 13.5813C13.1122 13.525 13.2349 13.4424 13.3381 13.3383C13.4422 13.2351 13.5247 13.1123 13.5811 12.977C13.6374 12.8417 13.6665 12.6966 13.6665 12.5501C13.6665 12.4035 13.6374 12.2584 13.5811 12.1231C13.5247 11.9878 13.4422 11.865 13.3381 11.7618L8.56495 6.99909Z" fill="#757E92"/>
+                    </svg>                            
+                </button> 
+                <h3 class="w-full text-base font-bold inline-block line-clamp-1">Pilih Lokasi</h3>
+            </div>
+            
+            <div class="modal-body">
+
+                <div class="modal-body__content">
+                    <div class="relative grid gap-4">
+                        <input type="text" id="gmap" class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Cari lokasi" value="">
+
+                        <div class="relative aspect-[4/3]">
+                            <iframe class="absolute w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.573658707647!2d106.821733113995!3d-6.187764262347006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f425e1ebb9df%3A0x8831eb5b0df677da!2sSarinah%2C%20Jl.%20M.H.%20Thamrin%20No.11%2C%20RT.8%2FRW.4%2C%20Gondangdia%2C%20Kec.%20Menteng%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010350!5e0!3m2!1sen!2sid!4v1661873823810!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="mt-4 w-full">
+                        <Button isButton={true} id="pilih-lokasi" className="w-full" type="button" data-dismiss="modal">Pilih Lokasi</Button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<style is:global>
+    .modal-open,
+    .modal-keep-last {
+        overflow: hidden !important;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 8;
+        display: none;
+        overflow: hidden;
+        outline: 0;
+        &--2 {
+            z-index: 10 !important;
+        }
+        &--3 {
+            z-index: 11 !important;
+        }
+    }
+    .modal-open .modal,
+    .modal-keep-last .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .modal.fade .modal-dialog {
+        @apply transition-transform ease-in-out duration-300 translate-y-1/2;
+    }
+    .modal.show .modal-dialog {
+        @apply translate-y-0;
+    }
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 7;
+        @apply bg-black;
+        &:nth-child(2) {
+            z-index: 9;
+        }
+        &:nth-child(3) {
+            z-index: 10;
+        }
+    }
+    .modal-backdrop {
+        
+    }
+    .fade {
+        @apply opacity-0 transition-opacity ease-in-out duration-200;
+    }
+    .fade.show {
+        @apply opacity-100;
+    }
+    .modal-backdrop.fade {
+        opacity: 0;
+    }
+    .modal-backdrop.show {
+        opacity: 0.7;
+    }
+
+    /*MODAL STYLE*/
+    .modal-dialog {
+        pointer-events: none;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: flex-end;
+        transform: translate(0, 50%);
+        min-height: 100%;
+        margin: 0;
+        @apply transition duration-100 w-full;
+        .modal--full & {
+            max-width: 100%;
+            flex-direction: column;
+            margin: 0;
+            align-items: flex-start;
+        }
+    }
+    .modal-content {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        @apply mx-auto w-full max-w-[480px];
+        pointer-events: auto;
+        @apply bg-white rounded-t-xl;
+        .modal--full & {
+            flex: 1;
+        }
+    }
+    .modal-body {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        &__title {
+            padding: 16px 45px 16px 24px;
+            margin-top: -24px;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            position: sticky;
+            top: -21px;
+            z-index: 2;
+        }
+        &__content {
+            @apply p-4;
+        }
+        &__footer {
+            padding: 0 24px 24px;
+        }
+    }
+</style>
+
+<script type="text/javascript" src="js/modalbox.js"></script>
+<script type="text/javascript">
+    $("#pilih-lokasi").on("click", function(e){
+        e.preventDefault();
+        $(".gmap").addClass("gmap--filled");
+    })
+</script>

@@ -7,14 +7,14 @@ import ModalFilterDPT from "../components/ModalFilterDPT.astro";
   title="EIS"
   description="Welcome to EIS!">
 
-    <ModalFilterDPT formAction="tps-pilih" />
+    <ModalFilterDPT hasil={true} formAction="tps-hasil-form" />
 
     <div class="grid grid-cols-2 gap-3 mb-5">
-      <a href="tps-survei" class="block rounded-xl px-3 py-2.5 text-center text-brand font-semibold border border-brand bg-brand-secondary">Survei</a>
-      <a href="tps-hasil" class="block rounded-xl px-3 py-2.5 text-center text-tertiary font-semibold border border-[#E7E9F0] bg-transparent">Hasil Suara</a>
+        <a href="tps-survei" class="block rounded-xl px-3 py-2.5 text-center text-tertiary font-semibold border border-[#E7E9F0] bg-transparent">Survei</a>
+        <a href="tps-hasil" class="block rounded-xl px-3 py-2.5 text-center text-brand font-semibold border border-brand bg-brand-secondary">Hasil Suara</a>
     </div>
   
-    <h1 class="font-bold text-xl mb-5">Survey Data DPT</h1>  
+    <h1 class="font-bold text-xl mb-5">Hasil Suara</h1>  
 
     <div class="grid gap-5">
       <div>

@@ -1,0 +1,92 @@
+---
+import FormDptAlamat from "./FormDptAlamat.astro";
+import FormDptDukungan from "./FormDptDukungan.astro";
+import FormDptPribadi from "./FormDptPribadi.astro";
+import NavMenuDpt from "./NavMenuDpt.astro";
+interface Props {
+    detailType: "default" | "form-dpt";
+    selected?: string;
+}
+
+const { detailType = "default", selected } = Astro.props;
+---
+
+<h1 class="font-bold text-xl flex gap-2 items-center mb-5">
+    <a href="#" onclick="history.back()">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 7H1M1 7L7 13M1 7L7 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>    
+    </a>
+    Survey Data DPT
+</h1>  
+
+<div class="grid gap-5">
+    <div>
+        <div class="mt-1 relative">
+            <input id="filter" name="filter" type="text" autocomplete="filter" data-toggle="modal" data-dismiss="modal" data-target="#modal-filter" readonly class="input-icon input-filter block w-full rounded-full border-0 pr-10 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Pilih kecamatan, desa, TPS" value="Satui, Sungai, TPS 1">
+        </div>
+    </div>
+    <div>
+        <div class="mt-1 relative">
+            <select id="dpt" class="select-opt form-element" data-placeholder="Pilih Data Pemilih Tetap" name="dpt">
+                <option></option>
+                <option value="tps-data-dpt">Pemilih A</option>
+                <option value="tps-data-dpt" {selected}>Pemilih B</option>
+                <option value="tps-data-dpt">Pemilih C</option>
+                <option value="tps-data-dpt">Pemilih D</option>
+                <option value="tps-data-dpt">Pemilih E</option>
+                <option value="tps-data-dpt">Pemilih F</option>
+                <option value="tps-data-dpt">Pemilih G</option>
+                <option value="tps-data-dpt">Pemilih A</option>
+                <option value="tps-data-dpt">Pemilih B</option>
+                <option value="tps-data-dpt">Pemilih C</option>
+                <option value="tps-data-dpt">Pemilih D</option>
+                <option value="tps-data-dpt">Pemilih E</option>
+                <option value="tps-data-dpt">Pemilih F</option>
+                <option value="tps-data-dpt">Pemilih G</option>
+                <option value="tps-data-dpt">Pemilih A</option>
+                <option value="tps-data-dpt">Pemilih B</option>
+                <option value="tps-data-dpt">Pemilih C</option>
+                <option value="tps-data-dpt">Pemilih D</option>
+                <option value="tps-data-dpt">Pemilih E</option>
+                <option value="tps-data-dpt">Pemilih F</option>
+                <option value="tps-data-dpt">Pemilih G</option>
+                <option value="tps-data-dpt">Pemilih A</option>
+                <option value="tps-data-dpt">Pemilih B</option>
+                <option value="tps-data-dpt">Pemilih C</option>
+                <option value="tps-data-dpt">Pemilih D</option>
+                <option value="tps-data-dpt">Pemilih E</option>
+                <option value="tps-data-dpt">Pemilih F</option>
+                <option value="tps-data-dpt">Pemilih G</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+{   
+    detailType === "default" ? null :
+    // @ts-ignore
+    detailType === "form-dpt" ? 
+
+<NavMenuDpt />
+
+<FormDptPribadi />
+<FormDptAlamat />
+<FormDptDukungan /> : null
+
+}
+
+<script type="text/javascript">
+    function redirect(goto){
+        if (goto != '') {
+            window.location = goto;
+        }
+    }
+
+    var selectEl = document.getElementById('dpt');
+
+    selectEl.onchange = function(){
+        var goto = this.value;
+        redirect(goto);
+    };
+</script>

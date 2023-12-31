@@ -1,0 +1,57 @@
+---
+import Button from "@/components/ui/Button.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+const alamatList = [
+    { dist: "Kabupaten", value: "Kabupaten Tanah Bumbu"},
+    { dist: "Kecamatan", value: "Satui"},
+    { dist: "Desa/Kelurahan", value: "Sungai Danau"},
+    { dist: "TPS", value: "TPS 1"},
+]
+const suaraList = [
+    { dist: "Total Surat Suara", value: "100"},
+    { dist: "Surat Suara Sah", value: "100"},
+    { dist: "Surat Suara Tidak Sah", value: "100"},
+    { dist: "Total Suara Syabani", value: "100"},
+    { dist: "Total Pemilih Tambahan", value: "100"},
+]
+---
+
+<MainLayout
+  title="EIS"
+  description="Welcome to EIS!" mainClassName="pb-0">
+
+    <h1 class="font-bold text-xl flex gap-2 items-center mb-5">
+        <a href="#" onclick="history.back()">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 7H1M1 7L7 13M1 7L7 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>    
+        </a>
+        Detail Hasil Suara
+    </h1>  
+
+    <div class="grid gap-5 mb-5">
+        <div class="w-full grid gap-3 rounded-xl p-4 border border-[#E7E9F0] py-3.5 text-sm sm:leading-6">
+            <h2 class="font-bold text-base">Alamat</h2>
+            {alamatList.map(item => (
+                <div class="flex justify-between">
+                    <div class="text-tertiary">{item.dist}</div>
+                    {item.value}
+                </div>
+            ))}
+        </div>
+        <div class="w-full grid gap-3 rounded-xl p-4 border border-[#E7E9F0] py-3.5 text-sm sm:leading-6">
+            <h2 class="font-bold text-base">Suara</h2>
+            {suaraList.map(item => (
+                <div class="flex justify-between">
+                    <div class="text-tertiary">{item.dist}</div>
+                    {item.value}
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <div class="sticky bottom-0 p-4 bg-white border-t border-[#6d7c87]/10 -mx-5">
+        <Button isButton={false} className="w-full" href="tps-hasil-form-edit">Edit</Button>
+    </div>
+    
+</MainLayout>

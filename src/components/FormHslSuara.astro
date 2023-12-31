@@ -1,0 +1,62 @@
+---
+import ButtonSticky from "./ui/ButtonSticky.astro";
+interface Props {
+    edit?: boolean;
+}
+
+const { edit = false } = Astro.props;
+const value = edit === true ? "100" : "";
+---
+
+<h1 class="font-bold text-xl flex gap-2 items-center mb-5">
+    <a href="#" onclick="history.back()">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 7H1M1 7L7 13M1 7L7 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>    
+    </a>
+    { edit === true ? "Edit" : null } Hasil Suara
+</h1>  
+
+<div class="grid gap-5">
+    <div>
+        <div class="mt-1 relative">
+            <input id="filter" name="filter" type="text" autocomplete="filter" data-toggle="modal" data-dismiss="modal" data-target="#modal-filter" readonly class="input-icon input-filter block w-full rounded-full border-0 pr-10 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Pilih kecamatan, desa, TPS" value="Satui, Sungai, TPS 1">
+        </div>
+    </div>
+
+    <form action="#" method="post" class="grid gap-5 mt-3">
+        <div>
+            <label for="total-ss-sah" class="block text-xs leading-6">Total Surat Suara</label>
+            <div class="mt-1 relative">
+                <input id="total-ss" name="total-ss" type="text" autocomplete="total-ss" value={value} class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukan Jumlah Suara">
+            </div>
+        </div>
+        <div>
+            <label for="total-ss-sah" class="block text-xs leading-6">Total Surat Suara Sah</label>
+            <div class="mt-1 relative">
+                <input id="total-ss-sah" name="total-ss-sah" type="text" autocomplete="total-ss-sah" value={value} class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukan Jumlah Suara">
+            </div>
+        </div>
+        <div>
+            <label for="total-ss-tdksah" class="block text-xs leading-6">Total Surat Suara Tidak Sah</label>
+            <div class="mt-1 relative">
+                <input id="total-ss-tdksah" name="total-ss-tdksah" type="text" autocomplete="total-ss-tdksah" value={value} class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukan Jumlah Suara">
+            </div>
+        </div>
+        <div>
+            <label for="total-ss-sr" class="block text-xs leading-6">Total Surat Suara Syabani</label>
+            <div class="mt-1 relative">
+                <input id="total-ss-sr" name="total-ss-sr" type="text" autocomplete="total-ss-sr" value={value} class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukan Jumlah Suara">
+            </div>
+        </div>
+        <div>
+            <label for="total-ss-tm" class="block text-xs leading-6">Total Pemilih Tambahan</label>
+            <div class="mt-1 relative">
+                <input id="total-ss-tm" name="total-ss-tm" type="text" autocomplete="total-ss-tm" value={value} class="block w-full rounded-full border-0 py-3.5 ring-1 ring-inset ring-[#E7E9F0] placeholder:text-[#B7BECD] focus:ring-1 focus:ring-inset focus:ring-primary/30 text-sm sm:leading-6" placeholder="Masukan Jumlah Suara">
+            </div>
+        </div>
+
+        <ButtonSticky />
+
+    </form>
+</div>
